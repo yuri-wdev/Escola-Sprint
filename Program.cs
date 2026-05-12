@@ -15,12 +15,18 @@ builder.Services.AddSwaggerGen();
 
 var connect = builder.Configuration.GetConnectionString("Conexao");
 
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connect, ServerVersion.AutoDetect(connect)));
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+app.MapOpenApi();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    
 }
 
 app.UseHttpsRedirection();
