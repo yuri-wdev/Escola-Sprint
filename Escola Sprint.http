@@ -1,0 +1,6 @@
+@Escola_Sprint_HostAddress = http://localhost:5147
+
+GET {{Escola_Sprint_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
