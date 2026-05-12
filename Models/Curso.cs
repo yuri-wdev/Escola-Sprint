@@ -13,7 +13,8 @@ namespace Escola_Sprint.Models
 
         public int CH_Semanal {  get; set; }
 
-
+        public virtual ICollection<Aluno> Alunos { get; set; } = new List<Aluno>();
+        public virtual ICollection<Disciplina> Disciplinas { get; set; } = new List<Disciplina>();
     }
 }
 

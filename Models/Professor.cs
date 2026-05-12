@@ -7,5 +7,7 @@
         public string Sexo { get; set; } = null!;
         public string Titularidade { get; set; } = null!;
 
+        public virtual ICollection<Disciplina> Disciplinas { get; set; } = new List<Disciplina>();
+
     }
 }

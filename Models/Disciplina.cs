@@ -13,5 +13,13 @@ namespace Escola_Sprint.Models
 
         public int codigoprofessor { get; set; }
 
+        public int CodigoProfessor { get; set; }
+        public virtual Professor Professor { get; set; } = null!;
+
+        public virtual ICollection<Curso> Cursos { get; set; } = new List<Curso>();
+        public virtual ICollection<Aluno> Alunos { get; set; } = new List<Aluno>();
+
+        public virtual ICollection<Notas> Notas { get; set; } = new List<Notas>();
+
     }
 }

@@ -7,7 +7,11 @@ namespace Escola_Sprint.Models
         public int IdAluno { get; set; }
         public string Nome { get; set; } = null!;
         public string Sexo { get; set; } = null!;
-        public int Curso { get; set; }
 
+        public int IdCurso { get; set; }
+        public virtual Curso Curso { get; set; } = null!;
+
+        public virtual ICollection<Notas> Notas { get; set; } = new List<Notas>(); 
+        public virtual ICollection<Disciplina> Disciplinas { get; set; } = new List<Disciplina>();
     }
 }
