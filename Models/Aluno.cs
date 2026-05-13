@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Escola_Sprint.Models
 {
@@ -9,9 +10,14 @@ namespace Escola_Sprint.Models
         public string Sexo { get; set; } = null!;
 
         public int IdCurso { get; set; }
-        public virtual Curso Curso { get; set; } = null!;
 
-        public virtual ICollection<Notas> Notas { get; set; } = new List<Notas>(); 
+        [JsonIgnore]
+        public virtual Curso? Curso { get; set; } = null!;
+
+        [JsonIgnore]
+        public virtual ICollection<Notas> Notas { get; set; } = new List<Notas>();
+
+        [JsonIgnore]
         public virtual ICollection<Disciplina> Disciplinas { get; set; } = new List<Disciplina>();
     }
 }

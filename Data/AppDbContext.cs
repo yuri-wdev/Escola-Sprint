@@ -76,7 +76,7 @@ namespace Escola_Sprint.Data
             modelBuilder.Entity<Disciplina>()
                 .HasOne(d => d.Professor)
                 .WithMany(p => p.Disciplinas)
-                .HasForeignKey(d => d.CodigoProfessor)
+                .HasForeignKey(d => d.codigoprofessor)
                 .HasConstraintName("fk_disciplinas_professor1");
         }
     }
