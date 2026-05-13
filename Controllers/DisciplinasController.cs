@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Escola_Sprint.Data;
+﻿using Escola_Sprint.Data;
 using Escola_Sprint.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Escola_Sprint.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
+    
     public class DisciplinasController : ControllerBase
     {
         private readonly AppDbContext _context;

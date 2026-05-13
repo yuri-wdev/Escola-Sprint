@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Escola_Sprint.Data;
+﻿using Escola_Sprint.Data;
 using Escola_Sprint.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Escola_Sprint.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
+    
     public class ProfessoresController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -23,7 +26,7 @@ namespace Escola_Sprint.Controllers
             return await _context.Professores.ToListAsync();
         }
 
-        // GET: api/Professores/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Professor>> GetProfessor(int id)
         {
@@ -37,7 +40,7 @@ namespace Escola_Sprint.Controllers
             return professor;
         }
 
-        // POST: api/Professores
+        
         [HttpPost]
         public async Task<ActionResult<Professor>> PostProfessor(Professor professor)
         {
@@ -47,7 +50,7 @@ namespace Escola_Sprint.Controllers
             return CreatedAtAction(nameof(GetProfessor), new { id = professor.Id }, professor);
         }
 
-        // PUT: api/Professores/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProfessor(int id, Professor professor)
         {
@@ -77,7 +80,7 @@ namespace Escola_Sprint.Controllers
             }
         }
 
-        // DELETE: api/Professores/5
+    
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProfessor(int id)
         {
