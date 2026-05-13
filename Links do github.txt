@@ -1,0 +1,5 @@
+ssh: git@github.com:yuri-wdev/Escola-Sprint.git
+
+https: https://github.com/yuri-wdev/Escola-Sprint.git
+
+repositório: https://github.com/yuri-wdev/Escola-Sprint#
