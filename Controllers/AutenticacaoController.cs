@@ -16,7 +16,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginDTO dto)
+    public IActionResult Login([FromBody] LoginDTO dto)
     {
         if (dto.Usuario != _config["Jwt:Usuario"] || dto.Senha != _config["Jwt:Senha"])
             return Unauthorized("Usuário ou senha inválidos.");
